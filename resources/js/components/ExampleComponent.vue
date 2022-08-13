@@ -1,23 +1,21 @@
 <template>
-  <div>
-    <p>This is an example Vue 3 component</p>
-    <p v-text="name"/>
-  </div>
+    <div class="center bg-green-500 text-white">
+        <p>This is an example Vue 3 component</p>
+        <p v-text="name" />
+    </div>
 </template>
 
 <script setup>
-
-import {onMounted} from 'vue';
+import { onMounted } from "vue";
 
 defineProps({
-  name: {
-    type: String,
-    required: true
-  }
+    name: {
+        type: String,
+        required: true,
+    },
 });
 
 onMounted(() => {
-  console.log('Mounted Component')
-})
+    console.log("Mounted Component");
+});
 </script>
-
