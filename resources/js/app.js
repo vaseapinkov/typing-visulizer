@@ -1,7 +1,29 @@
-import './bootstrap';
+import "./bootstrap";
 
-import Alpine from 'alpinejs';
+import { createApp, h } from "vue";
+import { createInertiaApp } from "@inertiajs/inertia-vue3";
+import { InertiaProgress } from "@inertiajs/progress";
 
-window.Alpine = Alpine;
+function resolvePageComponent(name, pages) {
+    for (const path in pages) {
+        if (path.endsWith(`${name.replace(".", "/")}.vue`)) {
+            return typeof pages[path] === "function"
+                ? pages[path]()
+                : pages[path];
+        }
+    }
 
-Alpine.start();
+    throw new Error(`Page not found: ${name}`);
+}
+
+createInertiaApp({
+    resolve: (name) =>
+        resolvePageComponent(name, import.meta.glob("./pages/**/*.vue")),
+    setup({ el, app, props, plugin }) {
+        createApp({ render: () => h(app, props) })
+            .use(plugin)
+            .mount(el);
+    },
+}).then(() => {});
+
+InertiaProgress.init();
