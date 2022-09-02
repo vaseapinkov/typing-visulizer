@@ -24,4 +24,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+    @apply h2, mt-4;
+}
+</style>
