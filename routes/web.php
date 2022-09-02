@@ -24,3 +24,7 @@ Route::get('/dashboard', function () {
 Route::get('/typing', function (){
     return Inertia::render('Typing/Index');
 });
+
+Route::get('/gallery-test', function (){
+    return Inertia::render('SamsungInputTest');
+});
