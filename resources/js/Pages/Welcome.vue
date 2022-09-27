@@ -413,3 +413,8 @@ defineProps({
         </div>
     </div>
 </template>
+
+<script>
+console.log("Hello from the console!");
+console.log(pa);
+</script>
