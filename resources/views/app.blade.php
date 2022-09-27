@@ -9,6 +9,9 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
+        {{-- Analitics --}}
+        <script data-host="https://onduis.com" data-dnt="true" src="https://onduis.com/js/script.js" id="ZwSg9rf6GA" async defer></script>
+
         <!-- Scripts -->
         @routes
         @vite('resources/js/app.js')
