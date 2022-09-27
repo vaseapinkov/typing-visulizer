@@ -417,4 +417,5 @@ defineProps({
 <script>
 console.log("Hello from the console!");
 console.log(pa);
+console.log(pa.track({ name: "Welcome loaded" }));
 </script>
